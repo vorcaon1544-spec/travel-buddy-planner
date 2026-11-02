@@ -1,0 +1,218 @@
+/* ==============================
+   1. Variables and Base Styles
+   ============================== */
+:root {
+  --blue: #1e6fd9;        /* main blue */
+  --blue-dark: #1553a8;   /* hover blue */
+  --blue-light: #eaf3ff;  /* soft background */
+  --text: #25324a;        /* body text */
+  --white: #ffffff;
+  --shadow: 0 6px 20px rgba(30, 111, 217, 0.15);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+}
+
+h1, h2, h3 { line-height: 1.3; }
+h2 { font-size: 2rem; color: var(--blue); text-align: center; }
+h3 { font-size: 1.2rem; margin-bottom: 8px; }
+a  { color: var(--blue); text-decoration: none; }
+
+/* ==============================
+   2. Layout Helpers
+   ============================== */
+.container { width: 90%; max-width: 1100px; margin: 0 auto; }
+.narrow    { max-width: 650px; }
+.section   { padding: 70px 0; }
+.alt-bg    { background: var(--blue-light); }
+
+.divider {
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 35px;
+  border: none;
+  border-radius: 4px;
+  background: var(--blue);
+}
+
+/* ==============================
+   3. Header and Navigation
+   ============================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 14px 0;
+}
+
+.logo { font-size: 1.5rem; font-weight: 700; color: var(--blue); }
+
+.nav-list { display: flex; gap: 22px; list-style: none; flex-wrap: wrap; }
+.nav-list a { color: var(--text); font-weight: 500; transition: color 0.3s; }
+.nav-list a:hover { color: var(--blue); }
+
+/* ==============================
+   4. Hero Banner
+   ============================== */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--white);
+  /* Blue overlay on top of a placeholder travel photo */
+  background:
+    linear-gradient(rgba(21, 83, 168, 0.65), rgba(30, 111, 217, 0.55)),
+    url("https://picsum.photos/seed/herotravel/1600/900") center / cover no-repeat;
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 15px; }
+.hero p  { font-size: 1.2rem; margin-bottom: 28px; }
+
+/* ==============================
+   5. Buttons
+   ============================== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+/* Buttons on the hero are white for contrast */
+.hero .btn { background: var(--white); color: var(--blue); }
+
+/* ==============================
+   6. Welcome Section
+   ============================== */
+.welcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.rounded-img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.check-list { margin-left: 20px; }
+
+/* ==============================
+   7. Package Cards
+   ============================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-6px); }
+.card img { width: 100%; display: block; }
+.card-body { padding: 20px; text-align: center; }
+.price { font-size: 1.4rem; font-weight: 700; color: var(--blue); margin: 8px 0 14px; }
+
+/* ==============================
+   8. Destination Table
+   ============================== */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; background: var(--white); }
+th, td { padding: 14px 18px; text-align: left; }
+th { background: var(--blue); color: var(--white); }
+tr:nth-child(even) td { background: var(--blue-light); }
+.steps { margin-left: 22px; }
+
+/* ==============================
+   9. Trip Planner Form
+   ============================== */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 30px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+label { font-weight: 600; margin-top: 8px; }
+input, select, textarea {
+  padding: 11px 14px;
+  border: 1px solid #c9d8ee;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(30, 111, 217, 0.2);
+}
+.form-box .btn { margin-top: 18px; }
+
+/* ==============================
+   10. Contact Section
+   ============================== */
+.contact-box {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 28px;
+  text-align: center;
+  background: var(--blue-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ==============================
+   11. Footer
+   ============================== */
+.site-footer {
+  padding: 28px 20px;
+  text-align: center;
+  background: var(--blue-dark);
+  color: var(--white);
+}
+.site-footer a { color: var(--white); text-decoration: underline; }
+
+/* ==============================
+   12. Responsive Design (tablets and phones)
+   ============================== */
+@media (max-width: 768px) {
+  .welcome-grid { grid-template-columns: 1fr; }  /* stack columns */
+  .hero h1 { font-size: 2.1rem; }
+  .header-inner { justify-content: center; gap: 10px; }
+  .section { padding: 50px 0; }
+}

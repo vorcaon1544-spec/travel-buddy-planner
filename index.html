@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- The root element of every HTML page -->
+<html lang="en">
+
+<head>
+  <!-- Character set and responsive viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title shown in the browser tab -->
+  <title>TravelBuddy Planner</title>
+
+  <!-- Link to the external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== HEADER + NAVIGATION ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">TravelBuddy</div>
+
+      <!-- Navigation links jump to sections using their IDs -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#welcome">Welcome</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- ----- Hero Banner ----- -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Plan Your Perfect Journey</h1>
+        <p>Discover amazing places, build your itinerary and travel with confidence.</p>
+        <a href="#planner" class="btn">Start Planning</a>
+      </div>
+    </section>
+
+    <!-- ----- Welcome Section ----- -->
+    <section id="welcome" class="container section">
+      <h2>Welcome to TravelBuddy Planner</h2>
+      <hr class="divider">
+      <div class="welcome-grid">
+        <div>
+          <p>
+            TravelBuddy Planner helps you organise trips quickly and easily.
+            Whether you love beaches, mountains or busy cities, we help you
+            find the right destination.
+          </p>
+          <br> <!-- line break for extra spacing -->
+          <h3>Why travel with us?</h3>
+          <!-- Unordered list -->
+          <ul class="check-list">
+            <li>Simple and friendly planning tools</li>
+            <li>Affordable travel packages</li>
+            <li>Helpful support team</li>
+          </ul>
+        </div>
+        <div>
+          <!-- Placeholder image -->
+          <img src="https://picsum.photos/seed/travelwelcome/600/400" alt="Scenic travel view" class="rounded-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- Travel Package Cards ----- -->
+    <section id="packages" class="section alt-bg">
+      <div class="container">
+        <h2>Popular Travel Packages</h2>
+        <hr class="divider">
+
+        <div class="card-grid">
+
+          <!-- Each package is an <article> card -->
+          <article class="card">
+            <img src="https://picsum.photos/seed/beach/400/260" alt="Beach destination">
+            <div class="card-body">
+              <h3>Beach Escape</h3>
+              <p>5 days of sun, sea and relaxation.</p>
+              <p class="price">$499</p>
+              <button type="button" class="btn">Book Now</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/mountain/400/260" alt="Mountain destination">
+            <div class="card-body">
+              <h3>Mountain Adventure</h3>
+              <p>7 days of trekking and fresh air.</p>
+              <p class="price">$649</p>
+              <button type="button" class="btn">Book Now</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/city/400/260" alt="City destination">
+            <div class="card-body">
+              <h3>City Explorer</h3>
+              <p>4 days of culture, food and sightseeing.</p>
+              <p class="price">$399</p>
+              <button type="button" class="btn">Book Now</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ----- Destination Table ----- -->
+    <section id="destinations" class="container section">
+      <h2>Top Destinations</h2>
+      <hr class="divider">
+
+      <!-- Wrapper allows the table to scroll on small screens -->
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Best Season</th>
+              <th>Duration</th>
+              <th>Starting Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Bali, Indonesia</td><td>April - October</td><td>6 days</td><td>$550</td></tr>
+            <tr><td>Swiss Alps</td><td>December - March</td><td>7 days</td><td>$900</td></tr>
+            <tr><td>Kathmandu, Nepal</td><td>October - May</td><td>5 days</td><td>$350</td></tr>
+            <tr><td>Paris, France</td><td>April - June</td><td>4 days</td><td>$700</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+      <h3>How to book in 3 steps</h3>
+      <!-- Ordered list -->
+      <ol class="steps">
+        <li>Choose your destination.</li>
+        <li>Fill in the trip planner form.</li>
+        <li>Receive your personalised plan by email.</li>
+      </ol>
+    </section>
+
+    <!-- ----- Trip Planner Form ----- -->
+    <section id="planner" class="section alt-bg">
+      <div class="container narrow">
+        <h2>Trip Planner</h2>
+        <hr class="divider">
+
+        <form class="form-box" action="#" method="post">
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="destination">Destination</label>
+          <select id="destination" name="destination">
+            <option>Bali, Indonesia</option>
+            <option>Swiss Alps</option>
+            <option>Kathmandu, Nepal</option>
+            <option>Paris, France</option>
+          </select>
+
+          <label for="date">Travel Date</label>
+          <input type="date" id="date" name="date">
+
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us what you would like..."></textarea>
+
+          <button type="submit" class="btn">Plan My Trip</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ----- Contact Section ----- -->
+    <section id="contact" class="container section">
+      <h2>Contact Us</h2>
+      <hr class="divider">
+      <div class="contact-box">
+        <p><strong>Email:</strong> <a href="mailto:hello@travelbuddy.example">hello@travelbuddy.example</a></p>
+        <p><strong>Phone:</strong> +1 234 567 890</p>
+        <p><strong>Address:</strong> 123 Journey Street, Wanderlust City</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <p>&copy; 2025 TravelBuddy Planner. All rights reserved.</p>
+    <p><a href="#welcome">Back to top</a></p>
+  </footer>
+
+</body>
+</html>
